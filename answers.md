@@ -169,3 +169,69 @@ VM10743:1 Uncaught ReferenceError: remove is not defined
 (anonymous) @ VM10743:1
 goAway.remove('bio-info')
 undefined
+=====================
+Removing Elements from the DOM
+
+1. Panda the Bear is lying about their skills! Take the "time travel" skill off the page to satisfy your personal sense of justice.
+
+document.querySelectorAll('.bar-default')
+(4) [div.bar-default, div.bar-default, div.bar-default, div.bar-default]
+var array = document.querySelectorAll('.bar-default')
+undefined
+array
+(4) [div.bar-default, div.bar-default, div.bar-default, div.bar-default]
+var liar = array[2]
+undefined
+liar
+<div class=​"bar-default">​…​</div>​
+liar.remove('bar-default')
+undefined
+
+====================
+Adding Elements to the DOM
+
+Question 1. That drawing of Pikachu is really cute. Let’s duplicate it using cloneNode() and insert it at the bottom of the .portfolio-container using insertAdjacentHTML() or appendChild().
+
+document.querySelector('#right-image img')
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+var doubleMe = document.querySelector('#right-image img')
+undefined
+doubleMe
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+var clone = doubleMe.cloneNode(false)
+undefined
+clone
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+var place = document.querySelector('.portfolio-container')
+undefined
+place
+<div class=​"portfolio-container">​…​</div>​
+place.appendChild(clone);
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+
+******
+Question 2. Wow, that was so satisfying I think we should do it 10 more times. Use a for loop to help you do this.
+
+place
+<div class=​"portfolio-container">​…​</div>​
+var pika = document.querySelector('#right-image img')
+undefined
+pika
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+---- first attempt ----
+var pikaArray = []
+undefined
+pikaArray
+[]
+for(var i = 0; i < 9; i++){ pikaArray.push(pika.cloneNode(false));}
+9
+pikaArray
+(9) [img, img, img, img, img, img, img, img, img]
+pikaArray.forEach(function(pika) {place.appendChild(pika)});
+undefined
+---- second attempt ----
+for(var i = 0; i < 9; i++){ place.appendChild(pika.cloneNode(false) );}
+<img src=​"images/​pikachu-drawing.jpg" alt=​"Pikachu" title=​"Pikachu">​
+
+*******
+Question 3. Let’s add a message about when the page was last updated. We'll do this by appending a new <li> element to the <ul> in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
