@@ -235,3 +235,28 @@ for(var i = 0; i < 9; i++){ place.appendChild(pika.cloneNode(false) );}
 
 *******
 Question 3. Let’s add a message about when the page was last updated. We'll do this by appending a new <li> element to the <ul> in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
+
+var listItem = document.createElement('li');
+undefined
+var leftSpan = document.createElement('span');
+undefined
+var lastUpdated = document.createTextNode('Page last updated on');
+undefined
+leftSpan.appendChild(lastUpdated);
+"Page last updated on"
+listItem.appendChild(leftSpan);
+
+
+<span>​Page last updated on​</span>​
+var rightSpan = document.createElement('span');
+undefined
+var dateItem = document.createTextNode(new Date);
+undefined
+rightSpan.appendChild(dateItem)
+"Thu Aug 17 2017 19:49:16 GMT-0400 (EDT)"
+listItem.appendChild(rightSpan);
+<span>​Thu Aug 17 2017 19:49:16 GMT-0400 (EDT)​</span>​
+var bio = document.querySelector(".bio-info");
+undefined
+bio.appendChild(listItem);
+<li>​…​</li>​
